@@ -1,0 +1,8 @@
+-- Text to SQL original prompt:
+-- get top 10 China unicorn
+-- 
+SELECT company, valuation, date_joined, city, industry
+FROM unicorns
+WHERE country = 'China'
+ORDER BY valuation DESC
+LIMIT 10
