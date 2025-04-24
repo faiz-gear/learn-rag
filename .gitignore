@@ -1,3 +1,4 @@
 .env
 chroma.log
 chroma_db
+storage/
