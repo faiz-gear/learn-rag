@@ -19,12 +19,12 @@ callback_manager = CallbackManager([llm_debug])
 Settings.callback_manager = callback_manager
 
 # 构造 refine 响应生成器
-from llama_index.core.response_synthesizers import (
-    get_response_synthesizer,
-)
-from llama_index.core.schema import NodeWithScore, Node
+from llama_index.core.schema import NodeWithScore
+from llama_index.core.data_structs import Node
+from llama_index.core.response_synthesizers import ResponseMode
+from llama_index.core import get_response_synthesizer
 
-refine_synthesizer = get_response_synthesizer(response_mode="refine")
+refine_synthesizer = get_response_synthesizer(response_mode=ResponseMode.REFINE)
 
 # 模拟检索出的3个Node
 nodes = [
@@ -38,7 +38,7 @@ nodes = [
         node=Node(text="小麦手机采用了高通骁龙888处理器，拥有强大的性能。"), score=0.8
     ),
     NodeWithScore(
-        node=Node(text="小麦手机拥有时尚的外观，可以满足年轻人的审美需求。"), score=0.7
+        node=Node(text="小麦手机还配备了5000mAh的大电池，续航能力非常强。"), score=0.7
     ),
 ]
 
