@@ -43,6 +43,7 @@ nodes = [
 ]
 
 # 使用 refine 响应生成器生成响应
+# refine模式： 迭代n次（Nodes数量），每次迭代都会根据上一次的response和nodes生成新的response
 response = refine_synthesizer.synthesize(
     "介绍一下小麦手机的优点，用中文回答", nodes=nodes
 )
